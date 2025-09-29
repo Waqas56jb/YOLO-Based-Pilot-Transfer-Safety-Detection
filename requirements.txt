@@ -6,3 +6,4 @@ matplotlib>=3.8.0
 pandas>=2.1.0
 ultralytics>=8.2.0
 filterpy>=1.4.5
+yt-dlp>=2024.4.9

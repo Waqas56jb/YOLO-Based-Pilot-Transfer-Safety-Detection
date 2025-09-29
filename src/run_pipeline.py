@@ -8,8 +8,12 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from pixel import enhance_contrast_yuv, denoise_frame, unsharp_mask
+# Support running both as a module (python -m src.run_pipeline) and as a script (python src/run_pipeline.py)
+try:
+    from .pixel import enhance_contrast_yuv, denoise_frame, unsharp_mask
+except Exception:
+    sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+    from pixel import enhance_contrast_yuv, denoise_frame, unsharp_mask
 
 
 @dataclass
